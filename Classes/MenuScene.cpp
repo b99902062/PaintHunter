@@ -1,4 +1,5 @@
 #include "MenuScene.h"
+#include "GestureScene.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -21,16 +22,18 @@ bool MenuScene::init() {
     uiLayer->addWidget(GUIReader::shareReader()->widgetFromJsonFile("UI/MenuUI/MenuUI.json"));  
 
 	UIPanel* rootPanel = (UIPanel*)uiLayer->getWidgetByName("rootPanel");
-	rootPanel->addTouchEventListener(this, toucheventselector(MenuScene::BGTouchEvent));
+	UIButton* gestureBtn = (UIButton*)rootPanel->getChildByName("gestureBtn");
+	gestureBtn->addTouchEventListener(this, toucheventselector(MenuScene::gestureBtnTouchEvent));
+	//rootPanel->addTouchEventListener(this, toucheventselector(MenuScene::BGTouchEvent));
+
+	
 
     this->addChild(uiLayer);
     
     return true;
 }
 
-void MenuScene::BGTouchEvent(CCObject* obj, TouchEventType type) {
-	/*
-	CCTransitionScene* transition = CCTransitionPageTurn::create(0.5f, StageSelectionScene::scene(), false);
+void MenuScene::gestureBtnTouchEvent(CCObject* obj, TouchEventType type) {
+	CCTransitionScene* transition = CCTransitionPageTurn::create(0.5f, GestureScene::scene(), false);
 	CCDirector::sharedDirector()->replaceScene(transition);
-	*/
 }

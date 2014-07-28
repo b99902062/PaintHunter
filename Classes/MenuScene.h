@@ -13,7 +13,7 @@ public:
     static cocos2d::CCScene* scene();
 
     CREATE_FUNC(MenuScene);
-	void BGTouchEvent(CCObject* obj, TouchEventType type);
+	void gestureBtnTouchEvent(CCObject* obj, TouchEventType type);
 };
 
 #endif // __MENU_SCENE_H__
