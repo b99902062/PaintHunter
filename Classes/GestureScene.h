@@ -18,14 +18,6 @@ using namespace cocos2d;
 using namespace cocos2d::gui;
 using namespace std;
 
-class MatchingResult {
-public:
-	MatchingResult(string, float);
-
-public: 
-	string templateName;
-	float templateScore;
-};
 
 class MatchingTemplate {
 public:
@@ -55,21 +47,6 @@ public:
 
 private:
 	void updateXYLabel(CCPoint);
-	vector<CCPoint> resamplePoints(vector<CCPoint>, int);
-	float getPathLength(vector<CCPoint>);
-	float getDistance(CCPoint, CCPoint);
-	float getInadicativeAngle(vector<CCPoint>);
-	CCPoint getCentroid(vector<CCPoint>);
-	vector<CCPoint> rotatePointsBy(vector<CCPoint>, float);
-	vector<CCPoint> scalePointsTo(vector<CCPoint>, float);
-	vector<CCPoint> translatePointsTo(vector<CCPoint>, CCPoint);
-	MatchingResult doRecognize(vector<CCPoint>, vector<MatchingTemplate>);
-	float getDistAtBestAngle(vector<CCPoint>, MatchingTemplate, float, float, float);
-	float getDistAtAngle(vector<CCPoint>, MatchingTemplate, float);
-	float getPathDist(vector<CCPoint>, vector<CCPoint>);
-	void initTemplates();
-	void checkMatchingGesture();
-	void generateIntoTemplate(string, vector<CCPoint>);
 
 private:
 	vector<CCPoint> mPoints;

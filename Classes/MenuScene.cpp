@@ -1,5 +1,5 @@
 #include "MenuScene.h"
-#include "GestureScene.h"
+//#include "GestureScene.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -34,6 +34,8 @@ bool MenuScene::init() {
 }
 
 void MenuScene::gestureBtnTouchEvent(CCObject* obj, TouchEventType type) {
+	/*
 	CCTransitionScene* transition = CCTransitionPageTurn::create(0.5f, GestureScene::scene(), false);
 	CCDirector::sharedDirector()->replaceScene(transition);
+	*/
 }

@@ -1,5 +1,5 @@
 #include "AppDelegate.h"
-#include "MenuScene.h"
+#include "Scene\StartScene.h"
 
 USING_NS_CC;
 
@@ -17,9 +17,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     pDirector->setDisplayStats(true);
     pDirector->setAnimationInterval(1.0 / 60);
 	
-	CCEGLView::sharedOpenGLView()->setDesignResolutionSize(960, 640, kResolutionShowAll);
+	CCEGLView::sharedOpenGLView()->setDesignResolutionSize(640, 960, kResolutionShowAll);
 
-    CCScene *pScene = MenuScene::scene();
+    CCScene *pScene = StartScene::scene();
 
     pDirector->runWithScene(pScene);
 
